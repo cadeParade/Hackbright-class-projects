@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+<form method = "POST" action = "{{url_for("authenticate")}}">
+	<fieldset>
+		<legend>Login Page</legend>
+		<label>Email</label>
+		<input type="string" name="email" placeholder="Email address"><br>
+		<label>Password</label>
+		<input type="password" name="password" placeholder="Password"><br>
+		<button class="btn btn-large btn-primary" type="submit">Sign in</button>
+	</fieldset>
+</form>
+{% endblock %}

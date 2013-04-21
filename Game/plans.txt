@@ -1,0 +1,33 @@
+Object of game: collect all the items (grow your beard) without being eaten by snake
+
+Items (rocks and trees, items to be collected) will be generated on the board randomly
+--Optional: the items will reposition after xx time to another random place??
+
+Each time an item is picked up:
+x	 -another snake appears
+	 -beard grows longer
+
+
+Behavior of snake:
+	moves in straight line across board in one dimension (either all the way up and down OR all the way right and left)
+
+
+Items: 
+	Mountain Dew
+	cheetos
+	d20
+	emacs
+	sandals
+
+	snake
+	character (5x)
+
+
+	To do list:
+
+	-link beard to some event (getting item? or when new "snake" appears?)
+	-make some event happen when all gems are collected
+	-make snakes move?
+	-make items disappear and reapper (maybe!!)
+	-make original sprites (Richard stallman)
+	- 

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+            <h1>Task List</h1>
+            <div class="tasklist">
+                <ul>
+                {% for task in tasks %}
+                <li><a href = "{{url_for ("view_task", id = task["id"])}}" >
+                    {% if task['completed_at'] %}<STRIKE>Task {{ task['id'] }}</a> 
+                        : {{ task['title'] }}</STRIKE>
+                    {%else%}
+                        Task <!-- {{ task['id'] }} --></a>: {{ task['title'] }}
+                    {% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+
+            <form method="POST" action="/save_task">
+                <label for="title">New Task Item
+                <input type="text" name="title" id="title"></input>
+                <input type="submit"></input>
+            </form>
+{% endblock %}
+

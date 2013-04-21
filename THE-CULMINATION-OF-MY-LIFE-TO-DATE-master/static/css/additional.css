@@ -1,0 +1,20 @@
+#table_header {
+	color: green;
+}
+
+
+
+.error {
+  color: #e73436;
+  font-style: italic;
+}
+
+.ratings_list {
+	height: 800px;
+}
+
+.float_right {
+	float: right;
+	padding-right: 30px;
+	padding-bottom: 20px;
+}

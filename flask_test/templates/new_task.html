@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>I'm tasky!</title>
+<link rel="stylesheet" href="/static/css/bootstrap.css" type = "text/css">
+</head>
+<body>
+<h1>Task list for your mom</h1>
+<p>Just kidding, I'm so drunk.</br>
+
+<form method = "POST" action = "/save_task">
+	Task title: <input type = "text" name = "task_title"> </input><br>
+	Task category: <input type = "text" name = "category"></input><br>
+
+	Task priority: 
+	<select name = "priority"> 
+	  	<option value="1">1 (most important)</option>
+	  	<option value="2">2</option>
+	  	<option value="3">3</option>
+	  	<option value="4">4</option>
+	  	<option value="5">5 (least important)</option>
+	</select><br>
+	Task due date: <input type = "datetime" name = "due_date"></input><br>
+	<input type = "submit">		
+</form>
+ 
+</p>
+
+</body>
+</html>
+
+

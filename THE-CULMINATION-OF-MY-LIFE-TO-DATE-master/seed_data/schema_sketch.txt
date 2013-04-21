@@ -1,0 +1,30 @@
+Rating Data: 
+	(primary key?) id: integer
+	user_id: int
+	movie_id: int
+	rating: int
+	timestamp: datetime
+
+Movie "Item" Data:
+	movie_id: int
+	movie_title: VARCHAR(64)
+	release_date: datetime?
+	video_release_date: datetime?
+	imdb url: VARCHAR(LONG)
+
+User Data:
+	user_id: int
+	email: VARCHAR(64)
+	password: VARCHAR(10000)
+	age: int
+	gender: VARCHAR(small)
+	occupation: VARCHAR(64)
+	zip_code: int
+	
+
+user has many rating
+movie has many ratings
+rating belongs to user
+rating belongs to movie
+user has many movies through ratings
+movie has many users through ratings

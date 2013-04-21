@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block body %}
+	<h1>Welcome! You've rated {{ratings|length}} movies.</h1> 
+
+	{% if ratings %}
+		<!-- Add if for users with no occupation -->
+		{% if ratings[0][3] %}
+			<h3>You entered as a {{ ratings[0][3] }}, but you are now a movie-rater.</h3>
+		{% else %}
+			<h3>You entered as nothing, but you are now a movie-rater.</h3>
+		{% endif %} <!-- ends if occupation -->
+
+		<div class="ratings_list">
+		<table class = "table sortable" id="sortabletable">
+		<tr class = "table_header">
+			<td>Movie Title</td>
+			<td>IMDB Link</td>
+			<td>User Rating</td>
+		</tr>
+		{% for rating in ratings %}
+		<tr>
+			<td><a href="view_movie/{{rating[0]}}" target="_blank">{{ rating[1] }}</a></td>
+			<td><a href="{{rating[4]}}" target="_blank">{{ rating[4] }}</a></td>			
+			<td>{{ rating[2] }}</td>
+		</tr> 
+		{% endfor %} 
+		</table>
+		<script type="text/javascript" src="/static/js/sortable.js"></script>
+
+	{% else %}
+			<p> DO SOME RATINGS</p>
+	{% endif %}<!-- ends if ratings -->
+
+	<!-- error for if the rating isn't 1-5 but the movie exists [ADD] -->
+	{% if error %}
+	          <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %} 
+    <br><br>
+
+
+	<form class="form-new-movie" method="POST" action = "{{url_for("new_rating")}}">
+		<input type="text" class="input-block-level" placeholder="Movie Title (Year)" name = "new_movie">
+    	<input type="text" class="input-block-level" placeholder="Rating 1-5" name = "new_rating">
+    
+		<div class = "float_right">
+			<button class="btn btn-large btn-success" type="submit">Rate some movies!</button>
+		</div>
+	</form>
+		
+{% endblock %}
+
